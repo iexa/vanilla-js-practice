@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Other page</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/webapis.html" aria-current="page">Web apis</a>
+    </nav>
+    <main>
+      <h1>Canvas</h1>
+
+      <canvas
+        style="height: 50vh; width: 80vw; border: 1px solid #777"
+      ></canvas>
+    </main>
+
+    <script>
+      const canv = document.querySelector('canvas');
+      const ctx = canv.getContext('2d');
+      ctx.fillStyle = 'darkgreen';
+      ctx.fillRect(3, 1, 93, 25);
+
+      // ctx.beginPath();
+      ctx.strokeStyle = 'black';
+      ctx.lineWidth = 1.2;
+      ctx.moveTo(50, 12);
+      ctx.lineTo(200, 100);
+      ctx.stroke();
+
+      ctx.font = '12px consolas';
+      ctx.fillStyle = '#0f5';
+      ctx.fillText('Hello!', 30, 10, 300);
+      // ctx.font = ''
+      ctx.strokeStyle = 'brown';
+      ctx.lineWidth = 1;
+      ctx.strokeText('Bye.', 100, 80, 300);
+      // drawImage -- createImageBitmap
+    </script>
+  </body>
+</html>
