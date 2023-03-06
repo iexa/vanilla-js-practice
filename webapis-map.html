@@ -27,10 +27,20 @@
     </nav>
     <main>
       <h1>Leaflet.js</h1>
-      <div id="map"></div>
+      <div id="map" style="height: 500px"></div>
     </main>
     <script>
-      const map = L.map('map').setView([59.4717, 24.7382], 13);
+      navigator.geolocation.getCurrentPosition((pos) => {
+        console.log(pos.coords);
+        const map = L.map('map').setView(
+          [pos.coords.latitude, pos.coords.longitude],
+          2
+        );
+        const marker = L.marker([
+          pos.coords.latitude,
+          pos.coords.longitude,
+        ]).addTo(map);
+      });
     </script>
   </body>
 </html>
